@@ -57,19 +57,25 @@ export default function RandomColorGenerator() {
   return (
     <div className="main-container" style={{ backgroundColor: color }}>
       <div className="btn-container">
-        <button onClick={() => setType("hex")}>Hex Color</button>
-        <button onClick={() => setType("rgb")}>Rgb Color</button>
+        <button className="btn secundary" onClick={() => setType("hex")}>
+          Hex Color
+        </button>
+        <button className="btn secundary" onClick={() => setType("rgb")}>
+          Rgb Color
+        </button>
         <button
-          className="btn"
+          className="btn special"
           onClick={type === "hex" ? hexColorGenerator : rgbColorGenerator}
         >
-          Generate Random Color
+          Generate Random Color {type === "hex" ? "(Hex)" : "(Rgb)"}
         </button>
       </div>
 
       <div className="status-container">
-        <h3>{type === "hex" ? "Hex Color" : "Rgb Color"}</h3>
-        <p>{color}</p>
+        <h3 className="type-status">
+          {type === "hex" ? "Hex Color" : "Rgb Color"}
+        </h3>
+        <p className="color-status">{color}</p>
       </div>
     </div>
   );
