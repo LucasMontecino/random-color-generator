@@ -1,4 +1,4 @@
-import RandomColorGenerator from "./components/randomColors";
+import RandomColorGenerator from "./components/random-color-generator";
 
 function App() {
   return (
